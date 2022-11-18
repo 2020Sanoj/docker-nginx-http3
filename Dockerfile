@@ -4,7 +4,7 @@ ARG BUILD=${BUILD}
 
 # Requirements
 RUN apk upgrade --no-cache && \ 
-    apk add --no-cache ca-certificates wget git make perl gcc g++ linux-headers \
+    apk add --no-cache ca-certificates wget tzdata git make perl gcc g++ linux-headers \
     pcre-dev zlib-dev libatomic_ops-dev && \
     mkdir /src && \
 
@@ -94,7 +94,7 @@ FROM alpine:20221110
 COPY --from=build /usr/local/openresty /usr/local/openresty
 
 RUN apk upgrade --no-cache && \
-    apk add --no-cache ca-certificates wget pcre-dev zlib-dev && \
+    apk add --no-cache ca-certificates wget tzdata pcre-dev zlib-dev && \
     ln -s /usr/local/openresty/nginx/sbin/nginx /usr/local/bin/nginx
 
 LABEL org.opencontainers.image.source="https://github.com/SanCraftDev/openresty-nginx-quic"
