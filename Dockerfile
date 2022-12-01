@@ -16,7 +16,7 @@ RUN apk upgrade --no-cache && \
     make -j "$(nproc)" && \
 
 # Openresty
-    wget https://github.com/SanCraftDev/openresty-quic/releases/download/latest/openresty.tar.gz -O - | tar xz -C /src && \
+    wget https://github.com/ZoeyVid/openresty-quic/releases/download/latest/openresty.tar.gz -O - | tar xz -C /src && \
 
 # njs
 #    cd /src && \
